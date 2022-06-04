@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  align-items: center;
+  background: #2196f3;
+  height: 64px;
+  padding: 0 62px;
+}
+
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: inline-block;
+  padding: 23px 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.active {
+  background: #1e88e5;
+}
