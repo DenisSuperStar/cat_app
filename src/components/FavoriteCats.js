@@ -19,10 +19,18 @@ export default function FavoriteCatsComponent() {
     setFavoriteCats(items);
   }, []);
 
+  function removeFromFavoriteCats(id) {
+    localStorage.removeItem(id);
+  }
+
   return (
-    <div className={styles.contaier}>
+    <div className={styles.container}>
       {favoriteCats.map((favoriteCat) => (
-        <FavoriteCatComponent favoriteCat={favoriteCat} key={favoriteCat.id} />
+        <FavoriteCatComponent
+          favoriteCat={favoriteCat}
+          key={favoriteCat.id}
+          handleRemoveCat={removeFromFavoriteCats.bind(this, favoriteCat.id)}
+        />
       ))}
     </div>
   );
