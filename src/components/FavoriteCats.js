@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { lazy } from "react";
-import styles from "./FavoriteCats.module.css";
+import styles from "./Cats.module.css";
 
 const FavoriteCatComponent = lazy(() => import("./FavoriteCat"));
 

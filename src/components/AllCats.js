@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { lazy } from "react";
 import LoaderComponent from "./Loader";
-import styles from "./AllCats.module.css";
+import styles from "./Cats.module.css";
 
 const CatComponent = lazy(() => import("./Cat"));
 
