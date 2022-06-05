@@ -1,4 +1,4 @@
-import styles from "../styles/card.module.css";
+import styles from "./FavoriteCat.module.css";
 
 export default function FavoriteCatComponent(props) {
   return (

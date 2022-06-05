@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { lazy } from "react";
-import styles from "../styles/container.module.css";
+import styles from "./FavoriteCats.module.css";
 
 const FavoriteCatComponent = lazy(() => import("./FavoriteCat"));
 
@@ -19,8 +19,8 @@ export default function FavoriteCatsComponent() {
     setFavoriteCats(items);
   }, []);
 
-  function removeFromFavoriteCats(id) {
-    localStorage.removeItem(id);
+  function removeFromFavoriteCats(favorite) {
+    localStorage.removeItem(favorite.id);
   }
 
   return (
@@ -29,7 +29,7 @@ export default function FavoriteCatsComponent() {
         <FavoriteCatComponent
           favoriteCat={favoriteCat}
           key={favoriteCat.id}
-          handleRemoveCat={removeFromFavoriteCats.bind(this, favoriteCat.id)}
+          handleRemoveCat={removeFromFavoriteCats.bind(this, favoriteCat)}
         />
       ))}
     </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "../styles/card.module.css";
+import styles from "./Cat.module.css";
 
 export default function CatComponent(props) {
   const [isFavorite, setIsFavorite] = useState(false);

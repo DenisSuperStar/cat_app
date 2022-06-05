@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { lazy } from "react";
 import LoaderComponent from "./Loader";
-import styles from "../styles/container.module.css";
+import styles from "./AllCats.module.css";
 
 const CatComponent = lazy(() => import("./Cat"));
 
@@ -29,8 +29,8 @@ export default function AllCatsComponent() {
       );
   }
 
-  function handleAddCat(id, item) {
-    localStorage.setItem(`${id}`, JSON.stringify(item));
+  function handleAddCat(item) {
+    localStorage.setItem(item.id, JSON.stringify(item));
   }
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function AllCatsComponent() {
           <CatComponent
             key={cat.id}
             cat={cat}
-            handleAddCat={handleAddCat.bind(this, cat.id, cat)}
+            handleAddCat={handleAddCat.bind(this, cat)}
           />
         ))}
       </div>

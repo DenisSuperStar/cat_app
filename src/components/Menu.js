@@ -1,20 +1,20 @@
 import { NavLink } from "react-router-dom";
-import style from "../styles/menu.module.css";
-import '../styles/app.css';
+import styles from "./Menu.module.css";
+import '../assets/styles/layout.css';
 
 export default function MenuComponent() {
   return (
-    <header className={style.header}>
+    <header className={styles.header}>
       <nav>
-        <ul className={style.list}>
-          <li className={style.item}>
-            <NavLink className={style.link} to="/" activeclassname="active">
+        <ul className={styles.list}>
+          <li className={styles.item}>
+            <NavLink className={styles.link} to="/" activeclassname="active">
               Главная
             </NavLink>
           </li>
-          <li className={style.item}>
+          <li className={styles.item}>
             <NavLink
-              className={style.link}
+              className={styles.link}
               to="/favorite"
               activeclassname="active"
             >
