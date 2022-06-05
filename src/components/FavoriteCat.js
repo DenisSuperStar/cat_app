@@ -1,4 +1,4 @@
-import styles from "./FavoriteCat.module.css";
+import styles from "./Cat.module.css";
 
 export default function FavoriteCatComponent(props) {
   return (
