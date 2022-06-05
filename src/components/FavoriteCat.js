@@ -6,9 +6,16 @@ export default function FavoriteCatComponent(props) {
       <img
         className={styles.thumbnail}
         src={props.favoriteCat.url}
-        key={props.favoriteCat.id}
         alt={props.favoriteCat.id}
       />
+      <div className={styles.wrapper}>
+        <img
+          className={styles.icon}
+          src="/images/love.svg"
+          alt="love it"
+          onClick={props.handleRemoveCat}
+        />
+      </div>
     </div>
   );
 }
