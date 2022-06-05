@@ -11,7 +11,7 @@ export default function AllCatsComponent() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   async function fetchCatsAsync() {
-    await fetch("https://api.thecatapi.com/v1/images/search?limit=20", {
+    await fetch("https://api.thecatapi.com/v1/images/search?limit=100", {
       headers: {
         "x-api-key": "8469b62b-635f-4207-86f6-29277feca77f",
       },
@@ -21,7 +21,6 @@ export default function AllCatsComponent() {
         (result) => {
           setIsLoaded(true);
           setCats(result);
-          console.log(result);
         },
         (error) => {
           setIsLoaded(true);
@@ -31,12 +30,7 @@ export default function AllCatsComponent() {
   }
 
   function handleAddCat(id, item) {
-    console.log(id, item);
     localStorage.setItem(`${id}`, JSON.stringify(item));
-  }
-
-  function handleRemoveCat(id) {
-    localStorage.removeItem(`${id}`);
   }
 
   useEffect(() => {
@@ -55,7 +49,6 @@ export default function AllCatsComponent() {
             key={cat.id}
             cat={cat}
             handleAddCat={handleAddCat.bind(this, cat.id, cat)}
-            handleRemoveCat={handleRemoveCat.bind(this, cat.id)}
           />
         ))}
       </div>
