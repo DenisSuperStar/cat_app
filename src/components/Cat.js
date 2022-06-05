@@ -5,7 +5,9 @@ export default function CatComponent(props) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
-    setIsFavorite(!!localStorage.key(props.cat.id));
+    localStorage.key(props.cat.id) === props.cat.id
+      ? setIsFavorite(true)
+      : setIsFavorite(false);
   }, [props.cat.id]);
 
   return (
@@ -19,16 +21,15 @@ export default function CatComponent(props) {
         {!isFavorite ? (
           <img
             className={styles.icon}
-            src="Like.svg"
-            alt="Like"
+            src="/images/like.svg"
+            alt="like it"
             onClick={props.handleAddCat}
           />
         ) : (
           <img
             className={styles.icon}
-            src=""
-            alt=""
-            onClick={props.handleRemoveCat}
+            src="/images/love.svg"
+            alt="love it"
           />
         )}
       </div>
